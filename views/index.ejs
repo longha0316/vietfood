@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+        <h1>Welcome to Foodie in Vietnam!</h1>
+        <h2>Delicious food all over Vietnam :)</h2>
+        <p>Created by <em>Long Ha</em></p>
+        <p><a class="btn btn-primary btn-large" href="/food/new">Add a new food</a>
+        </p>
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% dish.forEach(function(dish) { %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= dish.image %>">
+                <div class="caption">
+                <p><%= dish.name %></p>
+                </div>
+                <p>
+                    <a href="/food/<%= dish._id %>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>
+        </div>
+    <% }); %>
+    </div>
+    
+</div>
+
+<% include partials/footer %>
