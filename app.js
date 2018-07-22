@@ -17,7 +17,8 @@ var commentRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
     
 // mongoose.connect("mongodb://localhost/vietfood");
-mongoose.connect("mongodb://longha:kwonboa12@ds147391.mlab.com:47391/vietfood");
+mongoose.connect("mongodb://longha:hello123@ds147391.mlab.com:47391/vietfood");
+
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
