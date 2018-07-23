@@ -21,8 +21,8 @@ var commentRoutes = require("./routes/comments"),
 var moment = require('moment');
 app.locals.moment = moment;
     
-mongoose.connect("mongodb://localhost/vietfood");
-// mongoose.connect("mongodb://longha:hello123@ds147391.mlab.com:47391/vietfood");
+// mongoose.connect("mongodb://localhost/vietfood");
+mongoose.connect("mongodb://longha:hello123@ds147391.mlab.com:47391/vietfood");
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
