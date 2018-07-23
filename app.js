@@ -10,9 +10,11 @@ var express = require("express"),
     mongoose = require("mongoose"),
     flash = require("connect-flash"),
     Comment = require("./models/comment"),
-    Food = require("./models/food");
+    Food = require("./models/food"),
+    Address = require("./models/address");
 
 var commentRoutes = require("./routes/comments"),
+    addressRoutes = require("./routes/addresses"),
     foodRoutes = require("./routes/food"),
     indexRoutes = require("./routes/index");
     
@@ -45,6 +47,7 @@ app.use(function(req, res, next) {
 })
 
 app.use("/food/:id/comments", commentRoutes);
+app.use("/food/:id/addresses", addressRoutes);
 app.use("/food", foodRoutes);
 app.use(indexRoutes);
 

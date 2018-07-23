@@ -3,11 +3,27 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">Foodie in Vietnam</p>
-            <div class="list-group">
-                <li class="list-group-item">Address 1</li>
-                <li class="list-group-item">Address 2</li>
-                <li class="list-group-item">Address 3</li>
+            <p class="lead">Where to Find</p>
+            <div class="well">
+                <% dish.addresses.forEach(function(address) { %>
+                    <div class="row">
+                        <div class="col-md-12 list-group">
+                            <li class="list-group-item">
+                                <%= address.text %>
+                            </li>
+                            <% if(currentUser && dish.author.id.equals(currentUser._id)) { %>
+                                <a class="btn btn-warning btn-xs" href="/food/<%= dish._id %>/addresses/<%= address._id %>/edit">Edit</a>
+                                <form class="delete" action="/food/<%= dish._id %>/addresses/<%= address._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger btn-xs">Delete</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+                <hr>
+                <div class="text-left">
+                    <a class="btn btn-success" href="/food/<%= dish._id %>/addresses/new">Add a new location</a>
+                </div>
             </div>
         </div>
         <div class="col-md-9">

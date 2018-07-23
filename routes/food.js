@@ -36,7 +36,7 @@ router.get("/new", isLoggedIn, function(req, res) {
 });
 
 router.get("/:id", function(req, res) {
-    Food.findById(req.params.id).populate("comments").exec(function(err, createdFood) {
+    Food.findById(req.params.id).populate("comments addresses").exec(function(err, createdFood) {
         if(err) {
             console.log(err);
         } else {

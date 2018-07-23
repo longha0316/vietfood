@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+<div class="container">
+    <div class="container">
+        <h1 style="text-align: center">Add a new address to <%= dish.name %></h1>
+        <div style="width: 30%; margin: 30px auto">
+            <form action="/food/<%= dish._id %>/addresses" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="address[text]" placeholder="Text"></input>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>
+            </div>
+            </form>
+            <a href="/food">Go Back</a>
+        </div>
+
+    </div>
+
+</div>
+
+<% include partials/footer %>
