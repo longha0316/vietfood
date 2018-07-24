@@ -6,13 +6,13 @@
         <div style="width: 30%; margin: 30px auto">
             <form action="/food/<%= dish._id %>/comments" method="POST">
             <div class="form-group">
-                <input class="form-control" type="text" name="comment[text]" placeholder="Text"></input>
+                <textarea class="form-control" type="text" name="comment[text]" placeholder="Text"></textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-lg btn-default btn-block btn-primary">Submit</button>
             </div>
             </form>
-            <a href="/food">Go Back</a>
+            <a href="/food/<%= dish._id %>">Go Back</a>
         </div>
 
     </div>
